@@ -10,6 +10,13 @@ class Scraper:
         sleep(2)
         self.driver.find_element_by_xpath('//*[@id="searchform"]/button').click()
         sleep(2)
-        # find_elements_by_tag_name
+        temp = self.driver.find_element_by_class_name("badge-info")
+
+        print("TEMP", temp.text)
+
+        f = open("file.txt", "a")
+        f.write(temp.text[0:4])
+        f.close()
+
 
 Scraper('Cape Town')
